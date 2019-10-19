@@ -26,11 +26,12 @@ class ProductController extends Controller
     /**
      * Get All Products For Current User
      *
+     * @param Request $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-       return ProductResource::collection($this->productService->allForUser(Auth::id()));
+       return ProductResource::collection($this->productService->allForUser(auth('api')->user()->id));
     }
 
 

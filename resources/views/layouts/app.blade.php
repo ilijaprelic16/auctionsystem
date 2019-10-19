@@ -31,6 +31,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -40,9 +41,44 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                        <!-- Products -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Products
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">My Products</a>
+                                <a class="dropdown-item" href="#">Add New Product</a>
+                            </div>
+                        </li>
+
+                        <!-- Auctions -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Auctions
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">All Auctions</a>
+                                <a class="dropdown-item" href="#">My Auctions</a>
+                                <a class="dropdown-item" href="#">Start Auction</a>
+                            </div>
+                        </li>
+
+                        <!-- Bids -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Bids
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">My Bids</a>
+                                <a class="dropdown-item" href="#">Bid history</a>
+                                <a class="dropdown-item" href="#">Statistics</a>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

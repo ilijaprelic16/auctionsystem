@@ -27,7 +27,7 @@ class ProductRepository
 
     public function allForUser($id)
     {
-        return $this->product->where('user_id',$id)->get();
+        return $this->product->all()->where('user_id',1);
     }
 
     public function find($id)
