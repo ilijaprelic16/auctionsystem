@@ -2745,16 +2745,85 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('ProductsComponent mounted.');
   },
   created: function created() {
-    var _this = this;
+    this.getData();
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
 
-    axios.get('/api/products').then(function (response) {
-      return _this.products = response.data.data;
-    });
+      axios.get('/api/products').then(function (response) {
+        return _this.products = response.data.data;
+      });
+    },
+    formSubmit: function formSubmit() {
+      var _this2 = this;
+
+      axios.post('/api/products', {
+        'name': this.name,
+        'description': this.description,
+        'starting_price': this.starting_price
+      }).then(function (response) {
+        return _this2.getData();
+      });
+    }
   },
   data: function data() {
     return {
@@ -2766,7 +2835,12 @@ __webpack_require__.r(__webpack_exports__);
           description: '',
           starting_price: ''
         }
-      }
+      },
+      id: '',
+      name: '',
+      user_id: '',
+      description: '',
+      starting_price: ''
     };
   }
 });
@@ -39946,29 +40020,212 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             _vm._l(this.products, function(product) {
-              return _c("div", { staticClass: "row mt-2" }, [
+              return _c("div", { staticClass: "row mt-4" }, [
                 _vm._m(1, true),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-5" }, [
                   _c("h3", [_vm._v(_vm._s(product.name))]),
                   _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
                   _c("p", [_vm._v(_vm._s(product.description) + " ")]),
                   _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                    [_vm._v("View Project")]
-                  )
-                ])
+                  _c("h3", { staticClass: "border text-center border-dark" }, [
+                    _vm._v(_vm._s(product.starting_price) + " $")
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(2, true),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "modal fade", attrs: { id: "myModal2" } },
+                  [
+                    _c("div", { staticClass: "modal-dialog" }, [
+                      _c("div", { staticClass: "modal-content" }, [
+                        _vm._m(3, true),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-body" }, [
+                          _vm._m(4, true),
+                          _vm._v(" "),
+                          _c("hr"),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "text-center" }, [
+                            _c("h3", [_vm._v(_vm._s(product.name))]),
+                            _vm._v(" "),
+                            _c("hr"),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(_vm._s(product.description) + " ")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "h3",
+                              { staticClass: "border text-center border-dark" },
+                              [_vm._v(_vm._s(product.starting_price) + " $")]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(5, true)
+                      ])
+                    ])
+                  ]
+                )
               ])
             }),
             0
           )
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(6),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c(
+                "form",
+                {
+                  attrs: { id: "modalForm", action: "" },
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.formSubmit($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label text-md-right",
+                        attrs: { for: "name" }
+                      },
+                      [_vm._v("Name")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.name,
+                            expression: "name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "name",
+                          type: "text",
+                          name: "name",
+                          required: "",
+                          autocomplete: "name",
+                          autofocus: ""
+                        },
+                        domProps: { value: _vm.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.name = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label text-md-right",
+                        attrs: { for: "description" }
+                      },
+                      [_vm._v("Description")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.description,
+                            expression: "description"
+                          }
+                        ],
+                        attrs: { name: "description", id: "description" },
+                        domProps: { value: _vm.description },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.description = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label text-md-right",
+                        attrs: { for: "startingPrice" }
+                      },
+                      [
+                        _vm._v(
+                          "Starting\n                                    Price"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.starting_price,
+                            expression: "starting_price"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "startingPrice",
+                          type: "number",
+                          name: "starting_price",
+                          required: "",
+                          autocomplete: "new-password"
+                        },
+                        domProps: { value: _vm.starting_price },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.starting_price = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(7)
+          ])
+        ])
       ])
-    ]),
-    _vm._v(" "),
-    _vm._m(2)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -39992,7 +40249,7 @@ var staticRenderFns = [
               },
               [
                 _vm._v(
-                  "\n                                Open modal\n                            "
+                  "\n                            Add New Product\n                        "
                 )
               ]
             )
@@ -40005,11 +40262,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-7" }, [
+    return _c("div", { staticClass: "col-md-4" }, [
       _c("a", { attrs: { href: "#" } }, [
         _c("img", {
           staticClass: "img-fluid rounded mb-3 mb-md-0",
-          attrs: { src: "http://placehold.it/700x300", alt: "" }
+          attrs: { src: "https://picsum.photos/300", alt: "" }
         })
       ])
     ])
@@ -40018,110 +40275,127 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
-      _c("div", { staticClass: "modal-dialog" }, [
-        _c("div", { staticClass: "modal-content" }, [
-          _c("div", { staticClass: "modal-header" }, [
-            _c("h4", { staticClass: "modal-title" }, [
-              _vm._v("Add New Product")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "close",
-                attrs: { type: "button", "data-dismiss": "modal" }
-              },
-              [_vm._v("×")]
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "btn-group-vertical" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-warning",
+            staticStyle: { height: "50px" },
+            attrs: { href: "#" }
+          },
+          [_vm._v("Start Auction!")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: {
+              type: "button",
+              "data-toggle": "modal",
+              "data-target": "#myModal2"
+            }
+          },
+          [
+            _vm._v(
+              "\n                                    View\n                                "
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [
-            _c("form", { attrs: { method: "POST", action: "" } }, [
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "name" }
-                  },
-                  [_vm._v("Name")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      id: "name",
-                      type: "text",
-                      name: "name",
-                      required: "",
-                      autocomplete: "name",
-                      autofocus: ""
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "description", name: "description" }
-                  },
-                  [_vm._v("Description")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("textarea", { attrs: { id: "description" } })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "startingPrice" }
-                  },
-                  [_vm._v("Starting Price")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      id: "startingPrice",
-                      type: "number",
-                      name: "starting_price",
-                      required: "",
-                      autocomplete: "new-password"
-                    }
-                  })
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-footer" }, [
-            _c(
-              "button",
-              { staticClass: "btn btn-primary", attrs: { type: "button" } },
-              [_vm._v("Add Product")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-danger",
-                attrs: { type: "button", "data-dismiss": "modal" }
-              },
-              [_vm._v("Close")]
-            )
-          ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("a", { staticClass: "btn btn-info", attrs: { href: "#" } }, [
+          _vm._v("Edit")
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "btn btn-danger", attrs: { href: "#" } }, [
+          _vm._v("Delete")
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("img", {
+          staticClass: "img-fluid rounded mb-3 mb-md-0",
+          attrs: { src: "https://picsum.photos/300", alt: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [_vm._v("Add New Product")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { form: "modalForm", type: "submit" }
+        },
+        [_vm._v("Add Product\n                        ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      )
     ])
   }
 ]

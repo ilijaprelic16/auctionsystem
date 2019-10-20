@@ -30,6 +30,7 @@ class ProductService
     public function create(Request $request)
     {
         $attributes = $request->all();
+        $attributes['user_id'] = auth('api')->user()->id;
 
         return $this->productRepository->create($attributes);
     }
