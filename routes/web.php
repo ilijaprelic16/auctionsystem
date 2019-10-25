@@ -17,5 +17,11 @@ Route::get('/', function () {
 
 
 Auth::routes();
+//
+Route::get('/products', 'WebControllers\HomeController@products')->name('products');
 
-Route::get('/home', 'WebControllers\HomeController@index')->name('home');
+//Auction
+Route::get('/start-auction', 'WebControllers\HomeController@startAuction')->name('startAuction');
+
+
+

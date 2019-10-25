@@ -43,7 +43,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return new ProductResource($this->productService->create($request));
+        return new ProductResource($this->productService->store($request));
     }
 
 
@@ -73,11 +73,14 @@ class ProductController extends Controller
     /**
      * Remove the specified Product from storage.
      *
-     * @param Product $product
+     * @param $id
      * @return ProductResource
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        return new ProductResource($this->productService->delete($product->id));
+        $this->productService->delete($id);
+        return response()->json([
+            'message' => "Product with id $id deleted."
+        ]);
     }
 }

@@ -7,17 +7,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Auction</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <style>
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">     <style>
         body {
-            background: url('https://i.stack.imgur.com/vhoa0.jpg') no-repeat center center fixed;
+            background: url('https://www.rrts.com/wp-content/uploads/2018/09/Blue-Background.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
@@ -34,37 +33,38 @@
 
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Auction
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+@auth
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                         <!-- Products -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="/products" id="navbardrop" data-toggle="dropdown">
                                 Products
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">My Products</a>
+                                <a class="dropdown-item" href="/products">My Products</a>
                                 <a class="dropdown-item" href="#">Add New Product</a>
                             </div>
                         </li>
 
                         <!-- Auctions -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="/#" id="navbardrop" data-toggle="dropdown">
                                 Auctions
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">All Auctions</a>
-                                <a class="dropdown-item" href="#">My Auctions</a>
-                                <a class="dropdown-item" href="#">Start Auction</a>
+                                <a class="dropdown-item" href="/start-auction">Start Auction</a>
+                                <a class="dropdown-item" href="/auctions">All Auctions</a>
+                                <a class="dropdown-item" href="/my-auctions">My Auctions</a>
+
                             </div>
                         </li>
 
@@ -80,7 +80,7 @@
                             </div>
                         </li>
                     </ul>
-
+@endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

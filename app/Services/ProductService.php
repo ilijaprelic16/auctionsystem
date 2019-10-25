@@ -27,7 +27,7 @@ class ProductService
         return $this->productRepository->allForUser($id);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $attributes = $request->all();
         $attributes['user_id'] = auth('api')->user()->id;
