@@ -2,25 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99c83c90-1c24-47e9-8f66-4d035cf2206b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/AuctionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AuctionResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Auction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/AuctionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/AuctionService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/AuctionFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_20_214037_create_auctions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/products.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/PictureInput.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/auction/AuctionsComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/AuctionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/AuctionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebControllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebControllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebControllers/ProductController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuctionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AuctionResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Auction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Auction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/AuctionService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/AuctionService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/product/ProductsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/ProductsComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auction.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -167,21 +163,21 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repository" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Repository" />
-      <recent name="$PROJECT_DIR$/app/Services" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/resources/js/components/product" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/WebControllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/ApiControllers" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/WebControllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/components" />
+      <recent name="$PROJECT_DIR$/resources/js/components/auction" />
+      <recent name="$PROJECT_DIR$/app/Repository" />
+      <recent name="$PROJECT_DIR$/app/Services" />
+      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -217,7 +213,11 @@
       <workItem from="1571603763565" duration="5870000" />
       <workItem from="1571757476459" duration="694000" />
       <workItem from="1571965031992" duration="684000" />
-      <workItem from="1572004179299" duration="5013000" />
+      <workItem from="1572004179299" duration="5150000" />
+      <workItem from="1572019303254" duration="3757000" />
+      <workItem from="1572130045682" duration="1291000" />
+      <workItem from="1572131922174" duration="3610000" />
+      <workItem from="1572176563885" duration="13794000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1571459959047</created>
@@ -240,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571538404017</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="front-end changes">
+      <created>1572009323285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572009323285</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +271,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="added seeds, visual changes" />
     <MESSAGE value="add products, front" />
-    <option name="LAST_COMMIT_MESSAGE" value="add products, front" />
+    <MESSAGE value="front-end changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="front-end changes" />
   </component>
 </project>

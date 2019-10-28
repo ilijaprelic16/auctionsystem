@@ -19,11 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/products','ApiControllers\ProductController@index')->name('productss');
+Route::get('/products','ApiControllers\ProductController@index')->name('products');
 Route::get('/products/{product}','ApiControllers\ProductController@show')->name('product');
 
 Route::post('/products','ApiControllers\ProductController@store')->name('store.product');
 Route::put('/products/{id}','ApiControllers\ProductController@update')->name('update.product');
 Route::delete('/products/{id}','ApiControllers\ProductController@destroy')->name('delete.product');
-
 Route::post('/auctions','ApiControllers\AuctionController@store')->name('store.auction');
+
+Route::get('/auctions','ApiControllers\AuctionController@index')->name('store.auction');

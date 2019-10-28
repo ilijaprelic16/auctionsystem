@@ -18,7 +18,7 @@ class HomeController extends Controller
         return view('products');
     }
 
-    public function startAuction()
+    public function auctions()
     {
         return view('auction');
     }

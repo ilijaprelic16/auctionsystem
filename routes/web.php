@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/products', 'WebControllers\HomeController@products')->name('products');
 
 //Auction
-Route::get('/start-auction', 'WebControllers\HomeController@startAuction')->name('startAuction');
+Route::get('/auctions', 'WebControllers\HomeController@auctions')->name('auctions');
 
 
 

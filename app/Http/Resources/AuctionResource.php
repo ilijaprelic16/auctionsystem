@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Services\AuctionService;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class AuctionResource extends JsonResource
@@ -20,7 +21,9 @@ class AuctionResource extends JsonResource
             'start_time' => $this->start_time,
             'end_time' => $this->end_time,
             'created_at' => $this->created_at,
-            'product_id' => $this->product_id
+            'product_id' => $this->product_id,
+            'time_left' => AuctionService::timeLeft($this->end_time),
+            'product' => $this->product
         ];
     }
 }

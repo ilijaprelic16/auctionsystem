@@ -8,10 +8,10 @@ class Auction extends Model
 {
 
     protected $fillable = [
-      'active','end_time','product_id'
+      'active','end_time','product_id','start_time'
     ];
 
     public function product(){
-        return $this->hasOne('product');
+        return $this->belongsTo(Product::class);
     }
 }
